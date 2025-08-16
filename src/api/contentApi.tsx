@@ -7,6 +7,8 @@ import { ServicePageResponse } from "@/models/servicepageModel";
 import { FooterItem } from "@/models/footerModel";
 import { HeadingsModel } from "@/models/headingsModel";
 
+const API_BASE = "https://sacred-renewal-8564485713.strapiapp.com/api";
+
 export interface ContentData {
   teams: Team[];
   testimonials: Testimonial[];
@@ -16,7 +18,6 @@ export interface ContentData {
   footer: FooterItem[];
   headings: HeadingsModel[];
 }
-const API_BASE = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 export async function fetchAllContent(locale: string): Promise<ContentData> {
   const endpoints = [
