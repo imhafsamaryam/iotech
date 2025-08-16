@@ -18,6 +18,7 @@ export default function EmailSubscriptionForm() {
     null | "success" | "duplicate" | "error"
   >(null);
   const language = useSelector((state: RootState) => state.language.lang);
+  const API_BASE = process.env.NEXT_PUBLIC_STRAPI_URL;
 
   return (
     <div className="max-w-max ">
@@ -29,7 +30,7 @@ export default function EmailSubscriptionForm() {
 
           try {
             const getRes = await axios.get(
-              `https://sacred-renewal-8564485713.strapiapp.com/api/customers?filters[email][$eq]=${encodeURIComponent(
+              `${API_BASE}/customers?filters[email][$eq]=${encodeURIComponent(
                 values.email
               )}`
             );
