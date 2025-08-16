@@ -49,15 +49,9 @@ export default function OurTeamComp({
         </p>
 
         <div className="max-w-6xl    overflow-hidden">
-          <div
-            className="flex flex-col md:flex-row transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${currentIndex * (100 / 4)}%)`,
-              width: `${(teamMembers.length / 3) * 100}%`,
-            }}
-          >
+          <div className="flex flex-col md:flex-row transition-transform duration-500 ease-in-out">
             {teamMembers.map((member, idx) => (
-              <div key={idx} className="md:w-1/4 flex-shrink-0 md:px-3">
+              <div key={idx} className="md:w-1/3 flex-shrink-0 md:px-3">
                 <div
                   className={` transition duration-300 md:p-4 flex flex-col  ${
                     language === "en"
@@ -90,34 +84,27 @@ export default function OurTeamComp({
             ))}
           </div>
 
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <button
-              onClick={prevSlide}
+              // onClick={prevSlide}
               className="absolute left-0 bottom-[30%]       "
-              disabled={currentIndex === 0}
             >
               <FaArrowLeft
-                className={`${
-                  currentIndex === 0
-                    ? " text-[#4B2615]/30 w-6 h-6"
-                    : " text-[#4B2615] w-6 h-6"
-                }`}
+                className={`  text-[#4B2615] w-6 h-6
+                 `}
               />
             </button>
             <button
-              onClick={nextSlide}
+              // onClick={nextSlide}
               className="absolute right-0 bottom-[30%]       "
               disabled={currentIndex >= teamMembers.length - 3}
             >
               <FaArrowRight
-                className={`${
-                  currentIndex >= teamMembers.length - 3
-                    ? " text-[#4B2615]/30 w-6 h-6"
-                    : " text-[#4B2615] w-6 h-6"
-                }`}
+                className={` text-[#4B2615] w-6 h-6
+                 `}
               />
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
