@@ -53,11 +53,7 @@ export default function OurTeamComp({
             {teamMembers.map((member, idx) => (
               <div key={idx} className="md:w-1/3 flex-shrink-0 md:px-3">
                 <div
-                  className={` transition duration-300 md:p-4 flex flex-col  ${
-                    language === "en"
-                      ? "items-start md:items-center"
-                      : "items-end md:items-center"
-                  }`}
+                  className={` transition duration-300 md:p-4 flex flex-col items-center`}
                 >
                   <img
                     src={member.Image.url}
